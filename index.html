@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Discover Singapore</title>
+<title>VideoHub - Watch Videos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -10,108 +10,98 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f8;
-color:#333;
+background:#f1f1f1;
 }
+
+/* Header */
 
 header{
-background:#c8102e;
+background:#202020;
 color:white;
-text-align:center;
-padding:25px;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-nav{
-background:#111;
-text-align:center;
-padding:12px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 18px;
+.logo{
+font-size:22px;
 font-weight:bold;
 }
 
-nav a:hover{
-color:#c8102e;
+.search input{
+padding:8px;
+width:300px;
+border:none;
+border-radius:3px;
 }
 
-.hero{
-height:420px;
-background:url("https://images.unsplash.com/photo-1508962914676-134849a727f0") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-align:center;
-}
-
-.hero h1{
-background:rgba(0,0,0,0.5);
-padding:20px 40px;
-font-size:40px;
-}
+/* Layout */
 
 .container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+display:flex;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:40px;
+/* Sidebar */
+
+.sidebar{
+width:200px;
+background:white;
+height:100vh;
+padding-top:20px;
+border-right:1px solid #ddd;
+}
+
+.sidebar a{
+display:block;
+padding:12px 20px;
+text-decoration:none;
+color:#333;
+}
+
+.sidebar a:hover{
+background:#f0f0f0;
+}
+
+/* Video grid */
+
+.content{
+flex:1;
+padding:20px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+gap:20px;
 }
 
-.card{
+/* Video card */
+
+.video-card{
 background:white;
-border-radius:8px;
+border-radius:6px;
 overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.card img{
+.video-card video{
 width:100%;
-height:200px;
-object-fit:cover;
 }
 
-.card-content{
-padding:18px;
+.video-info{
+padding:12px;
 }
 
-.card h3{
-margin-top:0;
+.video-title{
+font-size:16px;
+font-weight:bold;
+margin-bottom:5px;
 }
 
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 16px;
-background:#c8102e;
-color:white;
-text-decoration:none;
-border-radius:4px;
-}
-
-.btn:hover{
-background:#111;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+.channel{
+color:#777;
+font-size:13px;
 }
 
 </style>
@@ -120,64 +110,69 @@ margin-top:40px;
 <body>
 
 <header>
-<h1>Discover Singapore</h1>
-<p>The Lion City of Asia</p>
+
+<div class="logo">VideoHub</div>
+
+<div class="search">
+<input type="text" placeholder="Search videos...">
+</div>
+
 </header>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Attractions</a>
-<a href="#">Food</a>
-<a href="#">Travel Guide</a>
-<a href="#">Contact</a>
-</nav>
-
-<section class="hero">
-<h1>Explore the Beauty of Singapore</h1>
-</section>
 
 <div class="container">
 
-<div class="section-title">
-<h2>Top Attractions</h2>
-<p>Singapore is famous for its futuristic skyline, cultural diversity, and amazing food.</p>
+<div class="sidebar">
+<a href="#">Home</a>
+<a href="#">Trending</a>
+<a href="#">Music</a>
+<a href="#">Gaming</a>
+<a href="#">Education</a>
+<a href="#">Sports</a>
 </div>
+
+<div class="content">
+
+<h2>Recommended Videos</h2>
 
 <div class="grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd">
-<div class="card-content">
-<h3>Marina Bay Sands</h3>
-<p>An iconic luxury resort featuring the famous rooftop infinity pool.</p>
-<a href="#" class="btn">Learn More</a>
+<div class="video-card">
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+<div class="video-info">
+<div class="video-title">Big Buck Bunny</div>
+<div class="channel">Nature Channel</div>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d">
-<div class="card-content">
-<h3>Gardens by the Bay</h3>
-<p>A futuristic nature park known for its giant Supertrees and biodomes.</p>
-<a href="#" class="btn">Learn More</a>
+<div class="video-card">
+<video controls>
+<source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+</video>
+<div class="video-info">
+<div class="video-title">Sample Movie</div>
+<div class="channel">Movie Studio</div>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1565967511849-76a60a516170">
-<div class="card-content">
-<h3>Sentosa Island</h3>
-<p>Singapore's favorite island resort with beaches and theme parks.</p>
-<a href="#" class="btn">Learn More</a>
+<div class="video-card">
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+<div class="video-info">
+<div class="video-title">Wildlife Documentary</div>
+<div class="channel">Discovery Media</div>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1560343090-f0409e92791a">
-<div class="card-content">
-<h3>Chinatown</h3>
-<p>A cultural district full of heritage buildings, markets and temples.</p>
-<a href="#" class="btn">Learn More</a>
+<div class="video-card">
+<video controls>
+<source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+</video>
+<div class="video-info">
+<div class="video-title">Technology Review</div>
+<div class="channel">Tech World</div>
 </div>
 </div>
 
@@ -185,9 +180,7 @@ margin-top:40px;
 
 </div>
 
-<footer>
-<p>© 2026 Discover Singapore | Travel Guide Website</p>
-</footer>
+</div>
 
 </body>
 </html>
